@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>YoSoy - Ofereça Serviços</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom styles for yosoy -->
+    <link href="css/YoSoy.css" rel="stylesheet">
+
+	<!-- Validações -->
+	
+	<script src="js/somenteletra.js"></script>
+	<script src="js/somentenumero.js"></script>
+	<script src="js/valida_email.js"></script>
+	<script src="js/nomecompleto.js"></script>
+	<script src="js/numtelefone.js"></script>
+	
+	<script>
+		function Ncompleto() {
+			var nome = document.getElementById("S").value.length;
+			if (nome < 9) {
+				document.getElementById("mensagem").innerHTML = "Erro! Escreva o seu nome e sobrenome."
+				document.getElementById('cadastro').disabled=true;
+			} else {
+				document.getElementById("mensagem").innerHTML = ""
+				document.getElementById('cadastro').disabled=false;
+			}
+		}
+	</script>
+	
+	<script>
+		function numtele() {
+			var telefone = document.getElementById("tel").value.length;
+			if (telefone < 11) {
+				document.getElementById("mensagem").innerHTML = "Erro! DDD+Telefone. Mínimo 11 números."
+				document.getElementById('cadastro').disabled=true;
+			} else {
+				document.getElementById("mensagem").innerHTML = ""
+				document.getElementById('cadastro').disabled=false;
+			}
+		}
+	</script>
+	
+	<script>
+		
+		function SomenteLetra(e){
+			var tecla=(window.event)?event.keyCode:e.which;   
+			if((tecla>47 && tecla<58)) return false;
+			else{
+				if (tecla==8 || tecla==0) return false;
+			else  return true;
+			}
+		}
+	</script>
+	
+	<script>
+		
+		function SomenteLetra(e){
+			var tecla=(window.event)?event.keyCode:e.which;   
+			if((tecla>47 && tecla<58)) return false;
+			else{
+				if (tecla==8 || tecla==0) return false;
+			else  return true;
+			}
+		}
+	</script>
+	<script>
+		function SomenteNumero(e){
+			var tecla=(window.event)?event.keyCode:e.which;   
+			if((tecla>47 && tecla<58)) return true;
+			else{
+				if (tecla==8 || tecla==0) return true;
+			else  return false;
+			}
+		}
+	</script>
+	
+	<script>
+		function valida_form (){
+			var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			if(!filter.test(document.getElementById("emau").value)){
+			document.getElementById("mensagem").innerHTML = "E-mail incorreto! Tente novamente."
+			document.getElementById("emau").focus();
+			return false
+			}
+		}
+	</script>
+	
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html"> <img src="img/logo1.png" alt="Logo do Yosoy, um boneco com um celular na mão"></a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="categorias.html" alt="Categorias">Categorias</a>
+            </li>
+			<li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="feedbacks.html" alt="Feedbacks">Feedbacks</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="mapa.html" alt="Mapa">Mapa</a>
+            </li>
+			<li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cadastrarServico.html" alt="Oferecer Serviço">Oferecer Serviço</a>
+            </li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="contato.html" alt ="sobre" id="navbardrop" data-toggle="dropdown">
+				Sobre
+			  </a>
+			  <div class="dropdown-menu">
+				<a class="dropdown-item" href="sobre.html" alt="Quem somos?">Quem Somos?</a>
+			    <a class="dropdown-item" href="contato.html" alt="Contato">Contato</a>
+			  </div>
+			</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+	  <br> <br> <br>
+	  <h4 class="text-center text-uppercase text-secondary mb-0"alt="Logotipo: O que você saber fazer?">O que você sabe fazer?</h4>
+	  <h2 class="text-center text-uppercase text-secondary mb-0" alt="Cadastre aqui seu serviço">Cadastre o seu serviço!</h2>
+        <hr class="star-dark mb-5">
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-0">
+					  <form action="" method="POST">
+					  <label>Nome:</label>
+					  <input class="form-control" alt="nome completo" id="S" maxlength="45" onChange="Ncompleto()" type="text" placeholder="Digite seu nome.." onkeypress='return SomenteLetra(event)' required="required" data-validation-required-message="Por favor, digite seu nome.">
+					  <p class="help-block text-danger"></p>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <label>Formação:</label>
+					  <input class="form-control" alt="formação" id="formacao" type="text" placeholder="Possui alguma formação?" required="required" data-validation-required-message="Por favor, digite a sua formação, caso tenha.">
+					  <p class="help-block text-danger"></p>
+					</div>
+				  </div>
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <label>Formação Complementares:</label>
+					  <input class="form-control" id="name" alt="formação complementares" type="text" placeholder="Tem cursos extras?" data-validation-required-message="Por favor, digite a sua formação extra.">
+					  <p class="help-block text-danger"></p>
+					</div>
+				  </div>
+				  
+				<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					<div class="dropdown">
+						<button class="btn btn-secondary btn-x0" type="dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Qual sua área de atuação?
+						<select name="areaAtuacao">
+							<option value="a" alt="Eletricista"> Eletricista </option>
+							<option value="a" alt="Jardineiro"> Jardineiro </option>
+							<option value="a" alt="Encanador"> Encanador </option>
+							<option value="a" alt="Fretista"> Fretista </option>
+							<option value="a" alt="Computadores"> Computadores </option>
+							<option value="a" alt="Saúde"> Saúde </option>
+						</select>
+						</div>
+					</div>	
+				
+
+				
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <label alt="Preço Médio">Preço Médio:</label>
+					  <input class="form-control" id="preco" type="preco" placeholder="Qual o preço médio cobrado por serviço?" onkeypress='return SomenteNumero(event)' required="required" data-validation-required-message="Por favor, digite a sua formação extra.">
+					  <p class="help-block text-danger"></p>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <label alt="Telefone">Telefone</label>
+					  <input class="form-control" name="telefone" id="tel" onChange="numtele()" placeholder="Telefone para contato? ex: 55997015841" maxlength="11" onkeypress='return SomenteNumero(event)' required="required" data-validation-required-message="Por favor, digite o seu telefone.">
+					  <p class="help-block text-danger"></p>
+					</div>
+				 </div>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					  <label alt="E-mail">E-mail</label>
+					  <input class="form-control" name="email" id="emau" type="email" placeholder="Digite o seu e-mail de contato." maxlength="45" required="required" data-validation-required-message="Por favor, digite o seu e-mail..">
+					  <div id="msgemau"></div>
+					</div>
+				</div>
+				<br>
+				<div id="success"></div>
+				  <div class="form-group">
+				  <p id="mensagem" style="color:red" ></p>
+					<button type="submit" alt="Salvar cadastro de serviço" class="btn btn-secondary btn-xl" id="cadastro">Cadastrar Serviço!</button>
+				</div>
+		  </div>
+		</div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4" alt="Como nos encontrar">Localização</h4>
+            <p class="lead mb-0" alt="Endereço"><h6><small><i> 780, Rua Barão do Amazonas
+              <br>Centro, Alegrete - RS </i></small></h6></p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" alt="Facebook" href="https://www.facebook.com/YoSoy-1080662085447076/">
+                  <i class="fab fa-fw fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" alt="Google Plus" href="https://plus.google.com/discover">
+                  <i class="fab fa-fw fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" alt="Twitter" href="https://twitter.com/">
+                  <i class="fab fa-fw fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" alt="Linkedin" href="https://br.linkedin.com/">
+                  <i class="fab fa-fw fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" alt="Dribbble" href="https://dribbble.com/">
+                  <i class="fab fa-fw fa-dribbble"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4" alt="Equipe">Equipe YoSoy</h4>
+            <p class="lead mb-0" alt="Quem desenvolveu?">Desenvolvido por:
+            	<h6><small><i>Vagner Quincozes, Silvio Quincozes, Rafael Torres, Ericsen Quincozes.</i></small></h6>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container" alt="Criado em:">
+        <small>Copyright &copy; YoSoy 2018</small>
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
